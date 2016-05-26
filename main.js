@@ -15,7 +15,9 @@ function createWindow () {
       height: 300,
       minHeight: 300,
       minWidth: 300,
-      icon: 'img/icon.png'
+      icon: 'img/icon.png',
+      skipTaskbar: true,
+      alwaysOnTop: true
   });
 
   // and load the index.html of the app.
