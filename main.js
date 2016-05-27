@@ -1,45 +1,40 @@
 const electron = require('electron')
 // Module to control application life.
 const app = electron.app
-// Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
-let mainWindow
+const {Menu, Tray} = require('electron');
 
-function createWindow () {
-  // Create the browser window.
-  mainWindow = new BrowserWindow({
-      width: 300,
-      height: 300,
-      minHeight: 300,
-      minWidth: 300,
-      icon: 'img/icon.png',
-      skipTaskbar: true,
-      alwaysOnTop: true
-  });
+const Notes = require('./lib/notes.js');
 
-  // and load the index.html of the app.
-  mainWindow.loadURL(`file://${__dirname}/index.html`);
+let appIcon = null;
 
-  mainWindow.setMenuBarVisibility(false);
-
-  // mainWindow.webContents.openDevTools();
-
-  // Emitted when the window is closed.
-  mainWindow.on('closed', function () {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
-    mainWindow = null
-  })
+function createTray() {
+  appIcon = new Tray("img/icon.png");
+  const contextMenu = Menu.buildFromTemplate([
+    {
+      label: 'New Notes', click() {
+        var notes = new Notes();
+      }
+    },
+    {
+      type: 'separator',
+    },
+    {
+      label: 'Exit', click() {
+        app.quit();
+      }
+    }
+  ]);
+  appIcon.setToolTip("Simple Notes Application");
+  appIcon.setContextMenu(contextMenu);
 }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
+
+// app.on('ready', createWindow)
+app.on('ready', createTray);
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
