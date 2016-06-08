@@ -1,0 +1,24 @@
+/**
+ * Stylesheet for Notes
+ * @author Juliardi <ardi93@gmail.com>
+ */
+
+body{
+    background:  linear-gradient(to bottom, rgba(183,222,237,1) 0%, rgba(113,206,239,1) 0%, rgba(33,180,226,1) 0%, rgba(183,222,237,1) 100%) no-repeat fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+
+#text {
+    height: 100%;
+    width: 100%;
+    min-height: 280px;
+    font-family: sans-serif;
+    resize: both;
+    overflow: hidden;
+}
+
+#text:focus {
+    outline: none;
+}
