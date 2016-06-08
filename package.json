@@ -21,6 +21,7 @@
     "electron-prebuilt": "^1.1.2"
   },
   "dependencies": {
-    "homedir": "^0.6.0"
+    "homedir": "^0.6.0",
+    "is-there": "^4.3.3"
   }
 }
