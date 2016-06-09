@@ -1,3 +1,3 @@
-# simple-notes
+# Simple Notes
 
-This is a simple sticky notes application
+Simple Notes is a simple sticky notes application. It aims to provide a simple yet useful application to write your important notes.
