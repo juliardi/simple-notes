@@ -7,7 +7,7 @@ const traymenu = require('./lib/core/traymenu.js');
 let appIcon = null;
 
 function createTray() {
-    appIcon = new Tray("img/icon.png");
+    appIcon = new Tray(`${__dirname}/img/icon.png`);
     appIcon.setToolTip("Simple Notes Application");
     const contextMenu = Menu.buildFromTemplate(traymenu(app));
     appIcon.setContextMenu(contextMenu);
