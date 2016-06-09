@@ -16,9 +16,7 @@ function createTray() {
 app.on('ready', createTray);
 
 app.on('window-all-closed', function () {
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
+  return false;
 });
 
 app.on('activate', function () {

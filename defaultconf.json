@@ -1,0 +1,19 @@
+{
+    "browserWindow": {
+        "width": 300,
+        "height": 300,
+        "minHeight": 300,
+        "minWidth": 300,
+        "icon": "img/icon.png",
+        "skipTaskbar": true,
+        "alwaysOnTop": true,
+        "maximizable": false,
+	"title": "Simple Notes"
+    },
+    "notes": {
+        "content": "",
+        "template": "default",
+        "fontFamily": "sans-serif",
+        "fontSize": 16
+    }
+}
