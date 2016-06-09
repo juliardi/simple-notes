@@ -1,5 +1,6 @@
 {
-  "name": "Simple Notes",
+  "name": "simple-notes",
+  "productName": "Simple Notes",
   "version": "1.0.0",
   "description": "A simple sticky notes application",
   "main": "main.js",
@@ -21,7 +22,9 @@
     "electron-prebuilt": "^1.1.2"
   },
   "dependencies": {
+    "fg-loadcss": "^1.2.0",
     "homedir": "^0.6.0",
-    "is-there": "^4.3.3"
+    "is-there": "^4.3.3",
+    "jsonfile": "^2.3.1"
   }
 }
